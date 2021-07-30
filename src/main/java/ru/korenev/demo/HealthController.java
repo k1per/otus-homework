@@ -1,4 +1,4 @@
-package com.example.demo;
+package ru.korenev.demo;
 
 import org.springframework.http.HttpEntity;
 import org.springframework.http.MediaType;
