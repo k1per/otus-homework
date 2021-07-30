@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    hikari:
+      password: ${DATABASE_PASSWORD}
+      driver-class-name: org.postgresql.Driver
+      username: ${DATABASE_USERNAME}
+      jdbc-url: ${DATABASE_CONNETION_URL}
+  flyway:
+    url: ${DATABASE_CONNETION_URL}
+    user: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+    driver-class-name: org.postgresql.Driver

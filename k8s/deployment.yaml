@@ -18,8 +18,8 @@ spec:
         app: demo
     spec:
       containers:
-      - image: k1p3r/otus-homework-1
-        name: otus-homework-1
+      - image: k1p3r/otus-homework-2-final
+        name: otus-homework-2
         ports:
           - containerPort: 8000
         readinessProbe:
@@ -27,9 +27,9 @@ spec:
             path: /actuator/health
             port: 8000
           initialDelaySeconds: 10
-          timeoutSeconds: 2
+          timeoutSeconds: 3
           periodSeconds: 3
-          failureThreshold: 1
+          failureThreshold: 3
         livenessProbe:
           httpGet:
             path: /actuator/health
@@ -39,4 +39,20 @@ spec:
           periodSeconds: 8
           failureThreshold: 1
         resources: {}
+        env:
+          - name: DATABASE_CONNETION_URL
+            value: "jdbc:postgresql://postgres.default.svc.cluster.local:5432/myapp"
+          - name: DATABASE_USERNAME
+            value: myuser
+          - name: DATABASE_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                key: postgresql-password
+                name: postgres
+          - name: SPRING_PROFILES_ACTIVE
+            valueFrom:
+              configMapKeyRef:
+                name: my-demo-config-map
+                key: ENVIROMENT
+
 status: {}
