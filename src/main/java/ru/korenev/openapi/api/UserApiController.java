@@ -1,5 +1,6 @@
 package ru.korenev.openapi.api;
 
+import io.micrometer.core.annotation.Timed;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,6 +31,7 @@ public class UserApiController implements UserApi {
     }
 
     @Override
+    @Timed(value = "findByUser")
     public ResponseEntity<User> findUserById(Long userId) {
         return ResponseEntity.ok(userService.findUserById(userId));
     }

@@ -5,3 +5,9 @@ management:
     web:
       exposure:
         include: "*"
+  metrics:
+    distribution:
+      sla:
+        findByUser: 100ms,1000ms, 5000ms, 10000ms
+      percentiles-histogram:
+        - findByUser : true

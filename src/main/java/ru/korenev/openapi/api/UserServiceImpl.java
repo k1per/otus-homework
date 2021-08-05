@@ -1,5 +1,6 @@
 package ru.korenev.openapi.api;
 
+import io.micrometer.core.annotation.Timed;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Timed(percentiles = {0.5, 0.95, 0.99}, value = "createUser")
     public void createUser(User user) {
         userRepository.save(user);
     }

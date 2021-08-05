@@ -18,8 +18,8 @@ spec:
         app: demo
     spec:
       containers:
-      - image: k1p3r/otus-homework-2-final
-        name: otus-homework-2
+      - image: k1p3r/otus-homework-3-final
+        name: otus-homework-3
         ports:
           - containerPort: 8000
         readinessProbe:

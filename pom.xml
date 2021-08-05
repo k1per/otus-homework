@@ -9,8 +9,8 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>ru.korenev</groupId>
-	<artifactId>otus-homework-2</artifactId>
-	<version>1.1.0</version>
+	<artifactId>otus-homework-3</artifactId>
+	<version>1.2.0</version>
 	<name>App for k8s</name>
 	<description>Spring Boot</description>
 	<properties>
@@ -72,6 +72,10 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-kubernetes-client-all</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.micrometer</groupId>
+			<artifactId>micrometer-registry-prometheus</artifactId>
 		</dependency>
 	</dependencies>
 
