@@ -1,12 +1,12 @@
 spring:
   datasource:
     hikari:
-      password: ${DATABASE_PASSWORD}
-      driver-class-name: org.postgresql.Driver
-      username: ${DATABASE_USERNAME}
-      jdbc-url: ${DATABASE_CONNETION_URL}
+      driver-class-name: org.h2.Driver
+      username: sa
+      password: password
+      jdbc-url: jdbc:h2:mem:testdb;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE
   flyway:
-    url: ${DATABASE_CONNETION_URL}
-    user: ${DATABASE_USERNAME}
-    password: ${DATABASE_PASSWORD}
-    driver-class-name: org.postgresql.Driver
+    url: jdbc:h2:mem:testdb;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE
+    user: sa
+    password: password
+    driver-class-name: org.h2.Driver

@@ -4,24 +4,24 @@ metadata:
   creationTimestamp: null
   labels:
     app: demo
-    version: v1
-  name: demo
+    version: v2
+  name: demo-v2
 spec:
   replicas: 2
   selector:
     matchLabels:
       app: demo
-      version: v1
+      version: v2
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
         app: demo
-        version: v1
+        version: v2
     spec:
       containers:
-      - image: k1p3r/otus-homework-4-3
+      - image: k1p3r/otus-homework-4-4
         name: otus-homework-4
         ports:
           - containerPort: 8000
